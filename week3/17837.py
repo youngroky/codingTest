@@ -47,8 +47,9 @@ def get_pieces(piece_index):
     idx = position[x][y].index(piece_index)
     moving = deque()
     while len(position[x][y]) > idx:
-        moving.append(position[x][y].pop())
+        moving.appendleft(position[x][y].pop())  # 순서 유지
     return moving
+
 
 # 말 이동 처리
 def move(piece_index):
